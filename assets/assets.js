@@ -7,7 +7,9 @@ import dance from './dance.jpeg'
 import happy from './happy.jpeg'
 import music from './music.jpeg'
 import kalamkari from './kalamkari.jpeg'
+import yoga from './yoga.jpeg'
 export const assets = {
+    yoga,
     dance,
     happy,
     arrow,
@@ -43,17 +45,15 @@ export const assets = {
         image:music,
         date:Date.now(),
         category:"Proposed",
+    },
+    {
+        id:4,
+        title:"Yoga",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        image:yoga,
+        date:Date.now(),
+        category:"Proposed",
     },]
-//     {
-//         id:4,
-//         title:"Tips for getting the most out of apps and software",
-//         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
-//         image:blog_pic_4,
-//         date:Date.now(),
-//         category:"Technology",
-//         author:"Alex Bennett",
-//         author_img:profile_icon
-//     },
 //     {
 //         id:5,
 //         title:"Enhancing your skills and capturing memorable moments",

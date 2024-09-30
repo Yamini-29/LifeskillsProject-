@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const Courseitem = ({ title, description, category, image, id }) => {
   return (
-    <div className='ml-10 mb-10 max-w-[250px] bg-white border border-black hover:shadow-[-7px_7px_0px_#000000] transition-shadow duration-300 ease-in-out'>
-      <Link href={`/blog/${id}`}>
+    <div className='ml-10 mr-10 mb-10 max-w-[400px] bg-white border border-orange-950 transition-transform duration-400 ease-in-out hover:shadow-[-7px_7px_0px_#4E1703] hover:scale-105 transform'>
+      <Link href={`/course/${id}`}>
         <Image 
           src={image} 
           alt={title} 
@@ -15,7 +15,7 @@ const Courseitem = ({ title, description, category, image, id }) => {
           className='border-b border-black object-cover h-[250px] w-full' 
         />
       </Link>
-      <p className='ml-1 mt-3 px-1 inline-block bg-black text-white text-xs'>
+      <p className='ml-1 mt-3 px-1 inline-block bg-orange-500 text-white text-xs'>
         {category}
       </p>
       <div className='p-3'>
@@ -25,7 +25,7 @@ const Courseitem = ({ title, description, category, image, id }) => {
         <p className='mb-2 text-xs tracking-tight text-gray-700'>
           {description}
         </p>
-        <Link href={`/blog/${id}`} className='inline-flex items-center py-1'>
+        <Link href={`/course/${id}`} className='inline-flex items-center py-1'>
           Click to Register 
           <Image 
             src={assets.arrow} 

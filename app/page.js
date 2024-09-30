@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-r from-orange-700 to-pink-300 min-h-screen">
+    <div className="bg-gradient-to-r from-orange-800 to-pink-300 min-h-screen">
     <Header/>
     <Courselist/>
     <Footer/>
