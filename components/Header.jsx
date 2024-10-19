@@ -9,7 +9,7 @@ const Header = () => {
 
         </div>
       <div className='text-center my-8'>
-        <h1 className='text-3xl sm:text-5xl font-medium'>
+               <h1 className='text-3xl sm:text-5xl font-medium'>
           Wellness Course-Classroom
         </h1>
         <p className='mt-10 max-w-[740px] m-auto text-xs sm:text-base'>
