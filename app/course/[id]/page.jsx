@@ -43,6 +43,16 @@ const Page = ({ params }) => {
       <div className='my-24'>
         <p>Share</p>
       </div>
+      <Link href={`/registrations/${data.id}`} className='inline-flex items-center py-1'>
+          Click to Register
+          <Image 
+            src={assets.arrow} 
+            className='ml-1' 
+            width={10} 
+            height={10} 
+            alt="arrow" 
+          />
+        </Link>
     </div>
     </>:<></>
   )
