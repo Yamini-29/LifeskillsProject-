@@ -39,16 +39,16 @@ const Header = () => {
         {/* Column 1 */}
         <div className="w-full flex flex-col z-10">
           <h4 className="text-lg font-semibold text-white xl:text-2xl">IIT Tirupati presents</h4>
-          <h1 className="xl:text-8xl sm:text-6xl xs:text-3xl font-semibold font-serif mt-2">Wellness <span>Course</span></h1>
-          <h1 className="sm:text-6xl xs:text-3xl font-semibold font-serif">Abera</h1>
-          <h4 className="text-rose-500 mt-4 lg:text-2xl">--FullStack Developer</h4>
+          <h1 className="xl:text-8xl sm:text-6xl xs:text-3xl font-semibold font-serif mt-2">LifeSkills <span>Wellness</span></h1>
+          <h1 className="sm:text-6xl xs:text-3xl font-semibold font-serif">Course</h1>
+          <h4 className="text-rose-500 mt-4 lg:text-2xl">--Course Registration</h4>
 
           <p className="lg:w-[70%] xs:w-full text-white text-sm mt-4 xl:text-xl">
-            Experienced full-stack developer with 4+ years of expertise in Laravel, NestJS, Nuxt.js, Next.js, Android, and some Flutter experience.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
           <div>
-            <button className="mt-6 px-6 py-1 bg-rose-500 text-lg text-white rounded-sm lg:text-2xl">Get In Touch</button>
+            <button className="mt-6 px-6 py-1 bg-rose-500 text-lg text-white rounded-sm lg:text-2xl">Register Courses</button>
           </div>
         </div>
 
