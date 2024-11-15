@@ -1,11 +1,15 @@
 // header.jsx
 import React from 'react';
-
+import { assets } from '@/public/assets/assets';
 const Header = () => {
   return (
     <div className="w-full h-screen  overflow-hidden">
       <header className="lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-lg">
-       
+      <img
+        alt=""
+        src={assets.bghome}
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
+      />
         <label htmlFor="menu-toggle" className="pointer-cursor md:hidden block">
           <svg className="fill-current text-gray-200" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
             <title>menu</title>
@@ -18,8 +22,8 @@ const Header = () => {
           <nav>
             <ul className="md:flex items-center justify-between text-base xl:text-lg text-gray-100 pt-4 md:pt-0">
               <li><a className="md:p-4 py-3 px-0 block text-rose-500 hover:text-rose-500" href="#">Home</a></li>
-              <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="#">About Me</a></li>
-              <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="#">Education</a></li>
+              <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="/profile">Profile</a></li>
+              <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="/studentslist">List</a></li>
               <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="#">Experience</a></li>
               <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500" href="#">Projects</a></li>
               <li><a className="md:p-4 py-3 px-0 block hover:text-rose-500 md:mb-0 mb-2" href="#">Contact</a></li>

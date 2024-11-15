@@ -1,4 +1,4 @@
-import { assets } from "@/assets/assets";
+import { assets } from "@/public/assets/assets";
 import Sidebar from "@/components/AdminComponents/Sidebar";
 import Image from "next/image";
 

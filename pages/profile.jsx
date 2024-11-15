@@ -3,13 +3,12 @@ import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Courseitem from '@/components/Courseitem';
-import { course_data } from '@/assets/assets';
+import { course_data } from '@/public/assets/assets';
 
 export default function Profile() {
   return (
     <div className="bg-gradient-to-r from-orange-800 to-pink-300 min-h-screen">
-      <Navbar />
-      <Header />
+    
       <div className="py-10">
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-b from-blue-400 via-blue-300 to-blue-200 text-white flex p-8">
@@ -55,7 +54,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 }

@@ -13,6 +13,8 @@ import bg1 from './bg1.jpeg'
 import bg2 from './bg2.jpeg'
 import profile from './Pro.jpg'
 import login from './background.jpeg'
+import bghome from './bg.png'
+import desc from './desc.png'
 
 export const assets = {
     yoga,
@@ -28,7 +30,9 @@ export const assets = {
     bg1,
     bg2,
     profile,
-    login
+    login,
+    bghome,
+    desc
     }
 
     export const course_data = [{

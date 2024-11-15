@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { course_data } from '@/assets/assets'; // Import course data
+import { course_data } from '@/public/assets/assets'; // Import course data
+import { MdOutlineBookmarkAdded } from "react-icons/md";
 
 const CourseRegister = ({ params }) => {
   const [registrationCompleted, setRegistrationCompleted] = useState(false);
@@ -14,45 +15,56 @@ const CourseRegister = ({ params }) => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Course Registration</h1>
+    <div className="container mx-auto p-12 max-w-lg bg-white shadow-lg rounded-lg">
+      <h1 className="text-4xl font-bold mb-6 text-center text-yellow-700">Course Registration</h1>
+      
       {course && (
         <>
-          <h2 className="text-2xl font-semibold mb-2">{course.title}</h2>
-          <p><strong>Category:</strong> {course.category}</p>
-          <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
-          <p><strong>Time:</strong> {new Date().toLocaleTimeString()}</p>
+          {/* Course Info Section */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-gray-800">{course.title}</h2>
+            <p className="text-gray-500 mt-2">{course.category}</p>
+            <div className="mt-4 text-gray-700">
+              <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
+              <p><strong>Time:</strong> {new Date().toLocaleTimeString()}</p>
+            </div>
+          </div>
 
+          {/* Registration Form */}
           {!registrationCompleted ? (
-            <form onSubmit={handleSubmit}>
-              <div className="mt-4">
-                <label className="block">Your Name:</label>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Your Name</label>
                 <input
                   type="text"
-                  className="border px-2 py-1 w-full"
+                  className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your name"
                   required
                 />
               </div>
-              
-              <div className="mt-4">
-                <label className="block">Email:</label>
+
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">Email</label>
                 <input
                   type="email"
-                  className="border px-2 py-1 w-full"
+                  className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
 
               <button 
-                type="submit" 
-                className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md"
-              >
-                Complete Registration
-              </button>
+  type="submit" 
+  className="w-full bg-yellow-700 text-white py-3 rounded-md font-semibold hover:bg-green-700 transition duration-200 flex items-center justify-center gap-2"
+>
+  <MdOutlineBookmarkAdded className="text-xl"/>
+  Complete Registration
+</button>
+
             </form>
           ) : (
-            <div className="mt-6 bg-green-100 text-green-700 p-4 rounded-md">
-              <p>Registration completed successfully for {course.title}!</p>
+            <div className="mt-8 bg-green-100 text-green-800 p-6 rounded-lg text-center">
+              <p className="text-lg font-semibold">Registration completed successfully for {course.title}!</p>
             </div>
           )}
         </>

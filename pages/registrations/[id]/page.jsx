@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { course_data } from '@/assets/assets'; // Import course data
+import { course_data } from '@/public/assets/assets'; // Import course data
 
 const CourseRegister = ({ params }) => {
   const [registrationCompleted, setRegistrationCompleted] = useState(false);

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import { assets } from '@/assets/assets';
+import { assets } from '@/public/assets/assets';
 const Login = () => {
   const [action, setAction] = useState('login'); // Default state set to 'login'
 

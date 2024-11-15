@@ -1,6 +1,6 @@
 "use client"; 
 
-import { course_data } from '@/assets/assets'
+import { course_data } from '@/public/assets/assets'
 import React from 'react'
 import Courseitem from './CourseItem';
 import  { useState } from 'react';
