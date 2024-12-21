@@ -1,7 +1,9 @@
 'use client'
 import { assets } from '@/public/assets/assets'
+import axios from 'axios'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const page = () => {
 
@@ -10,7 +12,8 @@ const page = () => {
         title:"",
         description:"",
         category:"Planned",
-        author:"Kalamkari prof"
+        author:"Kalamkari prof",
+        authorImg :"/author_img.png"
     })
 
     const onChangeHandler = (event) =>{
@@ -20,9 +23,35 @@ const page = () => {
         console.log(data);
         
     }
+
+    const onSubmitHandler = async(e) =>{
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append('title',data.title);
+      formData.append('description',data.description);
+      formData.append('category',data.category);
+      formData.append('author',data.author);
+      formData.append('authorImg',data.authorImg);
+      formData.append('image',image);
+      const response = await axios.post('/api/course',formData);
+      if(response.data.success){
+        toast.success(response.data.msg);
+        setImage(false);
+        setData({
+          title:"",
+          description:"",
+          category:"Planned",
+          author:"Kalamkari prof",
+          authorImg :"/author_img.png"
+        });
+      }
+      else {
+        toast.error("Error");
+      }
+    }
   return (
     <>
-      <form className='pt-5 [x-5 sm:pt-12 sm:pl-16'>
+      <form onSubmit={onSubmitHandler} className='pt-5 px-5 sm:pt-12 sm:pl-16'>
         <p className='text-xl'>Upload Thumbnail</p>
         <label htmlFor='image'>
             <Image className='mt-4' src={!image? assets.upload_area : URL.createObjectURL(image)} width={140} height={70} alt=""/>
@@ -37,7 +66,8 @@ const page = () => {
             <option value='Proposed'>Proposed</option>
             <option value='Planned'>Planned</option>
         </select>
-        <button type="submit" className='mt-8 w-40 h-12 bg-black text-white'></button>
+        <br/>
+        <button type="submit" className='mt-8 w-40 h-12 bg-black text-white'> ADD</button>
       </form>
     </>
   )

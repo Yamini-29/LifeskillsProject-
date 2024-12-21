@@ -8,9 +8,22 @@ const LoadDB = async ()=>{
     await ConnectDB();
 }
 LoadDB();
+
+// API Endpoint to get all courses
 export async function GET(request){
-    return NextResponse.json({msg:"API Working"})
+
+    const courseId = request.nextUrl.searchParams.get("id");
+    if(courseId){
+        const course = await CourseModel.findById(courseId);
+        return NextResponse.json({course});
+    }
+    else{
+        const courses = await CourseModel.find({});
+        return NextResponse.json({courses});
+    }
 }
+
+// API Endpoint for Uploading Courses
 export async function POST(request){
     const formData = await request.formData();
     const timestamp = Date.now();
@@ -19,7 +32,7 @@ export async function POST(request){
     const buffer = Buffer.from(imageByteData);
     const path = `./public/${timestamp}_${image.name}`;
     await writeFile(path,buffer);
-    const imgUrl = '/${timestamp}_${image.name}';
+    const imgUrl = `/${timestamp}_${image.name}`;
 
         const courseData = {
             title:`${formData.get('title')}`,
