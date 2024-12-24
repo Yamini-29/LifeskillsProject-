@@ -1,18 +1,24 @@
 "use client"; 
 
 import { course_data } from '@/public/assets/assets'
-import React from 'react'
-import Courseitem from './CourseItem';
+import React, { useEffect } from 'react'
+import CourseItem from './CourseItem';
 import  { useState } from 'react';
+import axios from 'axios';
 
 
-const Courselist = () => {
+const CourseList = () => {
     const [menu,setMenu] = useState("All");
     const [courses,setCourses] = useState([]);
-
-    const fetchCourses = async () => {
-        const response = await axios.get('/api/course')
+    const fetchCourses = async ()=>{
+        const response = await axios.get('/api/course');
+        setCourses(response.data.courses);
+        console.log(response.data.courses);
+        
     }
+    useEffect(()=>{
+        fetchCourses();
+    },[])
   return (
     <div>
         <div className='flex justify-center gap-6 my-10'>
@@ -22,8 +28,8 @@ const Courselist = () => {
             <button onClick={()=> setMenu('Projects')} className={menu==="Projects"?'bg-black text-white py-1 px-4 rounded-sm':""}> Projects</button>
         </div>
         <div className='flex flex-wrap justify-around grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 '>
-            {course_data.filter((item)=> menu==="All"?true:item.category===menu).map((item,index)=>{
-                return <Courseitem key={index} id={item.id} image={item.image} title={item.title} description={item.description} category={item.category}/>
+            {courses.filter((item)=> menu==="All"?true:item.category===menu).map((item,index)=>{
+                return <CourseItem key={index} id={item._id} image={item.image} title={item.title} description={item.description} category={item.category}/>
             })}
         </div>
       
@@ -31,4 +37,4 @@ const Courselist = () => {
   )
 }
 
-export default Courselist
+export default CourseList

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 
-const Courseitem = ({ title, description, category, image, id }) => {
+const CourseItem = ({ title, description, category, image, id }) => {
   return (
     <div className='ml-10 mr-10 mb-10 max-w-[400px] bg-white border border-orange-950 transition-transform duration-400 ease-in-out hover:shadow-[-7px_7px_0px_#4E1703] hover:scale-105 transform'>
       <Link href={`/course/${id}`}>
@@ -40,4 +40,4 @@ const Courseitem = ({ title, description, category, image, id }) => {
   );
 };
 
-export default Courseitem;
+export default CourseItem;
