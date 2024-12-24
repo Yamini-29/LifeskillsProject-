@@ -8,6 +8,11 @@ import  { useState } from 'react';
 
 const Courselist = () => {
     const [menu,setMenu] = useState("All");
+    const [courses,setCourses] = useState([]);
+
+    const fetchCourses = async () => {
+        const response = await axios.get('/api/course')
+    }
   return (
     <div>
         <div className='flex justify-center gap-6 my-10'>
