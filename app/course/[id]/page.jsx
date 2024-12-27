@@ -5,18 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@material-tailwind/react";
 import { FaWhatsapp } from "react-icons/fa";
+import axios from 'axios';
 
 const Page = ({ params }) => {
   const [data, setData] = useState(null);
   const [groupLink, setGroupLink] = useState(null);
 
   // Fetch course data based on course ID from params
-  const fetchCourseData = () => {
-    const course = course_data.find((course) => course.id === Number(params.id));
-    setData(course || null);
-  };
+  const fetchCourseData = async () => {
+    const response = await axios.get('/api/blog',{
+      params:{
+        id: params.id
+      }
+    })
+    setData(response.data);
+  }
 
-  // Fetch WhatsApp group link for the specific course ID
+  //Fetch WhatsApp group link for the specific course ID
   const fetchGroupLink = () => {
     fetch(`/api/links?id=${params.id}`)
       .then((res) => res.json())
@@ -27,7 +32,7 @@ const Page = ({ params }) => {
   useEffect(() => {
     fetchCourseData();
     fetchGroupLink();
-  }, [params.id]);
+  },[])
 
   if (!data) return <div>Loading...</div>;
 
